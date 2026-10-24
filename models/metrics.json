@@ -1,0 +1,21 @@
+{
+  "model": "RandomForestRegressor",
+  "dataset": "Nigerian property listings",
+  "target": "asking price in Nigerian naira",
+  "currency": "NGN",
+  "training_rows": 11110,
+  "test_rows": 2778,
+  "features": [
+    "bedrooms",
+    "bathrooms",
+    "toilets",
+    "parking_space",
+    "title",
+    "town",
+    "state"
+  ],
+  "mae_naira": 785310195.32,
+  "rmse_naira": 12512703091.55,
+  "r2": -15.7072,
+  "random_state": 42
+}
