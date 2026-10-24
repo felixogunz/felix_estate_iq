@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets and local configuration
+.env
+
+# Generated model artifacts
+models/*.joblib
+models/*.pkl
+models/metrics.json
+
+# Data files (retain directory placeholders)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07131f">
+    <meta name="description" content="EstateIQ - Nigerian property price intelligence powered by machine learning">
+    <title>Felix EstateIQ | Nigerian Property intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a href="#home" class="brand" aria-label="EstateIQ home">
+                <span class="brand-mark">E<span>Q</span></span>
+                <span class="brand-copy">
+                    <strong>Estate <span>IQ</span></strong>
+                    <small>PROPERTY INTELLIGENCE</small>
+                </span>
+            </a>
+
+            <div class="sidebar-label">WORKSPACE</div>
+            <nav class="nav-links">
+                <a href="" class="nav-link" href="#home"> <span>◈</span>Overview</a>
+                <a href="" class="nav-link" href="#predict"> <span>⌁</span>Price predictor</a>
+                <a href="" class="nav-link" href="#insights"> <span>▥</span>Model insights</a>
+                <a href="" class="nav-link" href="#about"> <span>ⓘ</span>About EstateIQ</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <!--<div class="mini-orbit"><span></span><span></span><span></span></div>-->
+
+                <div class="mini-orbit" aria-label="EstateIQ property intelligence emblem">
+                    <svg
+                        class="estateiq-emblem"
+                        viewBox="0 0 120 100"
+                        role="img"
+                        aria-labelledby="estateiq-logo-title"
+                    >
+                        <title id="estateiq-logo-title">EstateIQ geometric house and analytics logo</title>
+
+                        <defs>
+                            <linearGradient id="roofGold" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#ffe7ad"/>
+                                <stop offset="52%" stop-color="#eac68b"/>
+                                <stop offset="100%" stop-color="#b98a43"/>
+                            </linearGradient>
+
+                            <linearGradient id="mintCore" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#73ffdc"/>
+                                <stop offset="100%" stop-color="#27bda0"/>
+                            </linearGradient>
+                        </defs>
+
+                        <ellipse class="orbit orbit-gold"
+                            cx="60" cy="51" rx="46" ry="19"
+                            transform="rotate(-29 60 51)"/>
+
+                        <ellipse class="orbit orbit-mint"
+                            cx="60" cy="51" rx="43" ry="27"
+                            transform="rotate(28 60 51)"/>
+
+                        <path class="house-outline"
+                            d="M32 49 L60 25 L88 49 V78 H32 Z"
+                            fill="none"
+                            stroke="url(#roofGold)"
+                            stroke-width="3.5"
+                            stroke-linejoin="round"/>
+
+                        <g class="house-windows" fill="url(#mintCore)">
+                            <rect x="48" y="44" width="7" height="7" rx="1"/>
+                            <rect x="58" y="44" width="7" height="7" rx="1"/>
+                            <rect x="48" y="54" width="7" height="7" rx="1"/>
+                            <rect x="58" y="54" width="7" height="7" rx="1"/>
+                        </g>
+
+                        <g class="value-bars" fill="url(#mintCore)">
+                            <rect x="42" y="68" width="6" height="10" rx="1"/>
+                            <rect x="52" y="64" width="6" height="14" rx="1"/>
+                            <rect x="62" y="59" width="6" height="19" rx="1"/>
+                        </g>
+
+                        <circle class="orbit-dot dot-gold" cx="100" cy="31" r="3"/>
+                        <circle class="orbit-dot dot-mint" cx="18" cy="61" r="2.8"/>
+                        <circle class="orbit-dot dot-small" cx="83" cy="78" r="2"/>
+                    </svg>
+                </div>
+
+                <p>Better property decisions begin with better information.</p>
+                <span class="side-caption">BUILT FOR NIGERIA</span>
+            </div>
+        </aside>
+
+        <main class="main-content" id="home">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow"> <span class="status-dot"></span>PROPERTY INTELLIGENCE PLATFORM</p>
+                    <h1>See the value beyond <span>the walls.</span></h1>
+                    <p class="subheading">A smarter starting point for Nigerian property decisions.</p>
+                </div>
+                <div class="topbar-right">
+                    <div class="date-chip"> <span class="live-pulse"></span>ESTATEIQ / NIGERIA</div>
+                    <div class="avatar">E</div>
+                </div>
+            </header>
+
+            <section class="hero-banner reveal">
+                <div class="hero-content">
+                    <span class="hero-kicker">REAL ESTATE, REIMAGINED</span>
+                    <h2>Local knowledge <br><em>Intelligent estimates</em></h2>
+                    <p>Explore a property's estimated asking price using features learned from Nigeria property listings.</p>
+                    <a href="#predict" class="hero-link">Estimate a property <span>↗</span></a>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                    <div class="hero-sun"></div>
+                    <div class="tower tower-a"></div>
+                    <div class="tower tower-b"></div>
+                    <div class="tower tower-c"></div>
+                    <div class="tower tower-d"></div>
+                    <div class="hero-house">
+                        <div class="house-roof"></div>
+                        <div class="house-body">
+                            <span></span><span></span><span></span><span></span>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="hero-ground"></div>
+                    <div class="floating-tag">DATA × PLACE × VALUE</div>
+                </div>
+            </section>
+
+            <section class="stat-grid" aria-label="Model summary">
+                <article class="stat-card reveal">
+                    <div class="stat-top"> <span class="stat-icon mint">↗</span> <span class="stat-label">MEAN ABSOLUTE ERROR</span></div>
+                    <div class="stat-value" id="mae-value">—</div>
+                    <div class="stat-foot">Average absolute test error <span class="muted">↓ lower is better</span></div>
+                </article>
+                <article class="stat-card reveal">
+                    <div class="stat-top"><span class="stat-icon violet">⌁</span><span class="stat-label">MODEL R²</span></div>
+                    <div class="stat-value" id="r2-value">—</div>
+                    <div class="stat-foot">Fit on held-out test data <span class="muted">↑ higher is better</span></div>
+                </article>
+                <article class="stat-card reveal">
+                    <div class="stat-top"><span class="stat-icon gold">▤</span><span class="stat-label">LISTINGS USED</span></div>
+                    <div class="stat-value" id="listing-value">—</div>
+                    <div class="stat-foot">Cleaned dataset <span class="muted">Nigerian listings</span></div>
+                </article>
+                <article class="stat-card reveal">
+                    <div class="stat-top"><span class="stat-icon blue">◎</span><span class="stat-label">MODEL STATUS</span></div>
+                    <div class="stat-value status-value" id="model-status">Checking</div>
+                    <div class="stat-foot" id="model-status-foot">Connecting to local model</div>
+                </article>
+            </section>
+
+             <section class="workspace-grid" id="predict">
+                <article class="panel predictor-panel reveal">
+                <div class="panel-heading">
+                    <div>
+                    <span class="section-index">01 / PREDICTION STUDIO</span>
+                    <h2>Describe your property</h2>
+                    <p>Use the location and property details represented in the dataset.</p>
+                    </div>
+                    <span class="heading-icon">⌘</span>
+                </div>
+
+                <form id="prediction-form">
+                    <div class="field">
+                    <label for="state">State</label>
+                    <select id="state" name="state" required>
+                        <option value="">Loading states…</option>
+                    </select>
+                    </div>
+
+                    <div class="field">
+                    <label for="town">Town / area</label>
+                    <select id="town" name="town" required disabled>
+                        <option value="">Select a state first</option>
+                    </select>
+                    </div>
+
+                    <div class="field">
+                    <label for="title">Property type</label>
+                    <select id="title" name="title" required>
+                        <option value="">Loading property types…</option>
+                    </select>
+                    </div>
+
+                    <div class="field-grid">
+                    <div class="field">
+                        <label for="bedrooms">Bedrooms</label>
+                        <div class="input-wrap"><span>▦</span><input id="bedrooms" name="bedrooms" type="number" min="0" max="30" value="3" required></div>
+                    </div>
+                    <div class="field">
+                        <label for="bathrooms">Bathrooms</label>
+                        <div class="input-wrap"><span>◉</span><input id="bathrooms" name="bathrooms" type="number" min="0" max="30" value="3" required></div>
+                    </div>
+                    <div class="field">
+                        <label for="toilets">Toilets</label>
+                        <div class="input-wrap"><span>◇</span><input id="toilets" name="toilets" type="number" min="0" max="30" value="3" required></div>
+                    </div>
+                    <div class="field">
+                        <label for="parking_space">Parking spaces</label>
+                        <div class="input-wrap"><span>▱</span><input id="parking_space" name="parking_space" type="number" min="0" max="30" value="2" required></div>
+                    </div>
+                    </div>
+
+                    <button type="submit" class="predict-button" id="predict-button">
+                    <span class="button-spark">✳</span>
+                    <span id="button-label">Generate price estimate</span>
+                    <span class="button-arrow">↗</span>
+                    </button>
+                    <p class="form-note"><span>✦</span> Your result is an estimate, not a formal valuation.</p>
+                    <p class="error-message" id="form-error" role="alert"></p>
+                </form>
+                </article>
+
+                <article class="panel result-panel reveal" aria-live="polite">
+                <div class="result-header">
+                    <div>
+                    <span class="section-index">02 / ESTIMATED VALUE</span>
+                    <h2>Your property outlook</h2>
+                    </div>
+                    <span class="ai-pill"><span></span> MODEL ESTIMATE</span>
+                </div>
+
+                <div class="result-stage" id="result-stage">
+                    <div class="result-copy">
+                    <p class="result-label">PREDICTED ASKING PRICE</p>
+                    <div class="price-value" id="predicted-price">₦ —</div>
+                    <p class="price-words" id="result-caption">Complete the property details to generate your estimate.</p>
+                    </div>
+                    <div class="value-orb" aria-hidden="true">
+                    <div class="orb-ring ring-one"></div>
+                    <div class="orb-ring ring-two"></div>
+                    <div class="orb-core">₦</div>
+                    <span class="orb-spark spark-one">✦</span>
+                    <span class="orb-spark spark-two">·</span>
+                    <span class="orb-spark spark-three">✧</span>
+                    </div>
+                </div>
+
+                <div class="result-divider"></div>
+                <div class="property-summary">
+                    <div><span class="summary-icon">⌂</span><span><small>LOCATION</small><strong id="summary-location">Awaiting input</strong></span></div>
+                    <div><span class="summary-icon">▦</span><span><small>PROPERTY TYPE</small><strong id="summary-type">Awaiting input</strong></span></div>
+                    <div><span class="summary-icon">◈</span><span><small>BEDROOMS</small><strong id="summary-bedrooms">—</strong></span></div>
+                </div>
+                <div class="result-disclaimer" id="result-disclaimer">EstateIQ estimates are based on patterns in the available historical listings. Actual market value may differ.</div>
+                </article>
+            </section>
+
+            <section class="lower-grid" id="insights">
+                <article class="panel chart-panel reveal">
+                <div class="panel-heading">
+                    <div>
+                    <span class="section-index">03 / MODEL TRANSPARENCY</span>
+                    <h2>How the model performs</h2>
+                    <p>Evaluation metrics from the held-out test set.</p>
+                    </div>
+                </div>
+                <div class="chart-wrap"><canvas id="metrics-chart" aria-label="Model evaluation metrics chart"></canvas></div>
+                <div class="chart-legend">
+                    <span><i class="legend-dot legend-mint"></i> MAE · average absolute error</span>
+                    <span><i class="legend-dot legend-violet"></i> RMSE · large errors weighted more</span>
+                </div>
+                <p class="chart-footnote" id="chart-note">Metrics appear after the model has been trained.</p>
+                </article>
+
+                <article class="panel methodology-panel reveal" id="about">
+                <span class="section-index">04 / BUILT WITH INTENT</span>
+                <h2>More signal.<br><em>Less guesswork.</em></h2>
+                <p>EstateIQ combines property characteristics and location categories with a machine-learning model to produce a data-informed estimate.</p>
+                <div class="method-list">
+                    <div><span class="method-number">01</span><span><strong>Nigerian listings</strong><small>Local data, with its limitations made visible.</small></span></div>
+                    <div><span class="method-number">02</span><span><strong>Consistent pipeline</strong><small>The same data transformation is used during training and prediction.</small></span></div>
+                    <div><span class="method-number">03</span><span><strong>Honest evaluation</strong><small>Test metrics are displayed from the saved evaluation.</small></span></div>
+                </div>
+                <div class="method-footer"><span class="status-dot"></span> Built for clearer decisions, not guaranteed outcomes.</div>
+                </article>
+            </section>
+
+            <footer class="footer">
+                <a href="#home" class="footer-brand">Estate<span>IQ</span></a>
+                <span>FELIX ESTATE IQ · NIGERIAN PROPERTY INTELLIGENCE</span>
+                <a href="#about">Understand the estimate ↗</a>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
