@@ -5,13 +5,15 @@ from flask import Flask, jsonify, render_template, request
 from src.config import METRICS_PATH, PROCESSED_DATA_PATH
 from src.predict import predict_price
 
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 app = Flask(
     __name__,
-    template_folder="templates",
-    static_folder="static",
+    template_folder=str(PROJECT_ROOT / "templates"),
+    static_folder=str(PROJECT_ROOT / "static"),
 )
-
 
 def read_metrics():
     if not METRICS_PATH.exists():
